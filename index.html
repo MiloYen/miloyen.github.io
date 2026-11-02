@@ -28,19 +28,26 @@
       .style { margin: 0; color: var(--muted); }
       .image { display: grid; place-items: center; padding: 10px; background-color: #252923; background-image: linear-gradient(45deg,#30352d 25%,transparent 25%),linear-gradient(-45deg,#30352d 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#30352d 75%),linear-gradient(-45deg,transparent 75%,#30352d 75%); background-size: 24px 24px; background-position: 0 0,0 12px,12px -12px,-12px 0; }
       .image img { display: block; width: 100%; height: auto; object-fit: contain; }
+      .item-sheet { grid-column: 1 / -1; }
+      .item-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; padding: 0 12px 12px; }
+      .item-icon { min-width: 0; margin: 0; }
+      .item-icon .image { aspect-ratio: 1; padding: 8px; border-radius: 8px; }
+      .item-icon .image img { width: 100%; height: 100%; }
+      .item-icon figcaption { padding: 8px 2px 0; color: var(--muted); font-size: .9rem; text-align: center; }
       .caption { margin: 0; padding: 10px 15px 14px; color: var(--muted); }
       nav { margin-top: 28px; }
       a { color: var(--accent); }
       .button { display: inline-block; padding: 9px 13px; border: 1px solid var(--accent); border-radius: 7px; text-decoration: none; }
       footer { padding: 16px 0 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
-      @media (max-width: 680px) { .cards { grid-template-columns: 1fr; } article.map { grid-column: auto; } .board-head { display: block; } }
+      @media (max-width: 980px) { .item-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+      @media (max-width: 680px) { .cards { grid-template-columns: 1fr; } article.map, .item-sheet { grid-column: auto; } .board-head { display: block; } .item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     </style>
   </head>
   <body>
     <header>
       <div class="eyebrow">TaleRift · concept art · draft</div>
       <h1>Style Guide Concept Boards</h1>
-      <p class="lede">บอร์ด A–C เปรียบเทียบแนวทาง ส่วน Board D เป็น mix ที่เลือกแล้ว: Map A · Class A · Monster B · Item A · UI C แต่ละบอร์ดมีแผนที่ 3 แบบ, ตัวละคร 4 ตัว, มอนสเตอร์ 4 ตัว, ไอเทม 4 ชิ้น และ UI 4 อย่าง</p>
+      <p class="lede">บอร์ด A–C เปรียบเทียบแนวทาง ส่วน Board D เป็น mix ที่เลือกแล้ว: Map A · Class A · Monster B · Item A · UI C; Board D เพิ่มตัวอย่างไอเทม 5 ประเภทที่ต่างกัน</p>
       <div class="notice">ทุกภาพเป็น concept จาก draft guide ไม่ใช่ Style sample หรือ production art ที่อนุมัติแล้ว · Board D สร้างภาพใหม่ทั้ง 5 หมวด ไม่ได้นำภาพจากบอร์ดเดิมมาแปะ</div>
     </header>
     <main>
@@ -80,7 +87,13 @@
           <article class="map"><div class="card-head"><div class="category">Map scene · A · Cartoon HD</div><h3>Three isometric map concepts</h3><p class="style">ฉากนิทานสีอบอุ่น รูปทรงอ่านง่าย และพื้นที่เล่นเปิด</p></div><div class="image"><img src="assets/style-guide-owner-mix-v1/map-scene.png" alt="Board D: three newly generated isometric map concepts" /></div><p class="caption">ป่าซากโบราณ · ลานชุมชนหุบผาหินทราย · สวนรอยแยกผลึก</p></article>
           <article><div class="card-head"><div class="category">Class roster · A · Cartoon Lite Pixel</div><h3>Four original adventurers</h3><p class="style">ตัวละคร chibi แบบ pixel art ที่สร้างจาก pixel clusters</p></div><div class="image"><img src="assets/style-guide-owner-mix-v1/class-roster.png" alt="Board D: four newly generated native pixel-art class concepts" /></div><p class="caption">นักดาบโล่ · หน่วยคู่ใบมีด · นักเวทคทา · วิศวกรเครื่องกล</p></article>
           <article><div class="card-head"><div class="category">Monster lineup · B · Dream Lite Pixel</div><h3>Four distinct creatures</h3><p class="style">กลุ่มพิกเซลคมชัดและ silhouette ต่างกัน</p></div><div class="image"><img src="assets/style-guide-owner-mix-v1/monster-lineup.png" alt="Board D: four newly generated crisp pixel-art monster concepts" /></div><p class="caption">ด้วงเกราะมอส · วิญญาณเขากวาง · วิสป์ผลึก · ผู้พิทักษ์ศิลา</p></article>
-          <article><div class="card-head"><div class="category">Item icons · A · Cartoon HD</div><h3>Four potential shards</h3><p class="style">ไอคอน HD ขอบชัดและแยกสีได้ทันที</p></div><div class="image"><img src="assets/style-guide-owner-mix-v1/item-icons.png" alt="Board D: four newly generated Cartoon HD shard icons" /></div><p class="caption">เศษแดง · เศษเขียว · เศษน้ำเงิน · เศษรุ้ง</p></article>
+          <article class="item-sheet"><div class="card-head"><div class="category">Item icons · A · Cartoon HD · 5 distinct categories</div><h3>Five different inventory items</h3><p class="style">ไอคอนแยกชิ้นตามวัสดุและ silhouette ของแต่ละหมวด ไม่ใช่การเปลี่ยนสีชาร์ด</p></div><div class="item-grid">
+            <figure class="item-icon"><div class="image"><img src="assets/style-guide-owner-mix-v1/item-potion.png" alt="Ruby-red healing potion in a glass flask" /></div><figcaption>ยาฟื้นพลัง · Potion</figcaption></figure>
+            <figure class="item-icon"><div class="image"><img src="assets/style-guide-owner-mix-v1/item-warp-scroll.png" alt="Rolled parchment warp scroll tied with a teal ribbon" /></div><figcaption>ใบวาร์ป · Warp scroll</figcaption></figure>
+            <figure class="item-icon"><div class="image"><img src="assets/style-guide-owner-mix-v1/item-clothing.png" alt="Folded forest-green travel cloak" /></div><figcaption>เสื้อผ้า · Clothing</figcaption></figure>
+            <figure class="item-icon"><div class="image"><img src="assets/style-guide-owner-mix-v1/item-weapon.png" alt="Complete steel longsword with a teal grip" /></div><figcaption>อาวุธ · Weapon</figcaption></figure>
+            <figure class="item-icon"><div class="image"><img src="assets/style-guide-owner-mix-v1/item-monster-part.png" alt="Amber organic monster mandible crafting drop" /></div><figcaption>ชิ้นส่วนมอนสเตอร์ · Monster part</figcaption></figure>
+          </div><p class="caption">ภาพไอคอนใหม่สร้างแยกทีละชิ้นตาม Item icon guide (Cartoon HD)</p></article>
           <article><div class="card-head"><div class="category">UI skin · C · Dream HD</div><h3>Four interface components</h3><p class="style">กรอบงาช้าง teal/jade และประกายรอยแยกแบบจำกัด</p></div><div class="image"><img src="assets/style-guide-owner-mix-v1/ui-skin.png" alt="Board D: four newly generated Dream HD interface concepts" /></div><p class="caption">ช่องไอเทม · ปุ่ม · กรอบหลอด HP/MP · กรอบหน้าต่าง</p></article>
         </div>
       </section>
