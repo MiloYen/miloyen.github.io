@@ -4,72 +4,78 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#141713" />
-    <title>TaleRift · Voted Style Guide Concepts</title>
+    <title>TaleRift · Style Guide Concept Boards</title>
     <style>
-      :root {
-        color-scheme: dark;
-        --bg: #141713;
-        --panel: #1d211c;
-        --line: #42483e;
-        --text: #f1eddc;
-        --muted: #b2b5a6;
-        --accent: #d7bc79;
-      }
+      :root { color-scheme: dark; --bg: #141713; --panel: #1d211c; --line: #42483e; --text: #f1eddc; --muted: #b2b5a6; --accent: #d7bc79; }
       * { box-sizing: border-box; }
       body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, "Noto Sans Thai", sans-serif; }
-      header, main, footer { width: min(1440px, calc(100% - 36px)); margin-inline: auto; }
+      header, main, footer { width: min(1500px, calc(100% - 36px)); margin-inline: auto; }
       header { padding: 34px 0 22px; border-bottom: 1px solid var(--line); }
-      .eyebrow { color: var(--accent); font-size: .76rem; letter-spacing: .13em; text-transform: uppercase; }
+      .eyebrow, .category { color: var(--accent); font-size: .76rem; letter-spacing: .13em; text-transform: uppercase; }
       h1 { margin: 8px 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.15; font-weight: 600; }
-      .lede { max-width: 850px; margin: 10px 0 0; color: var(--muted); }
+      .lede { max-width: 900px; margin: 10px 0 0; color: var(--muted); }
       .notice { margin-top: 18px; border-left: 2px solid var(--accent); padding: 8px 14px; color: #e6d7ad; background: #1b1d17; }
       main { padding: 24px 0 40px; }
-      .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 18px; }
+      .board { margin: 0 0 42px; }
+      .board-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding: 0 0 12px; border-bottom: 1px solid var(--line); }
+      h2 { margin: 4px 0; font-size: clamp(1.5rem, 3vw, 2rem); }
+      .board-head p { max-width: 900px; margin: 0; color: var(--muted); }
+      .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
       article { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
-      .card-head { padding: 14px 16px 10px; }
-      .category { color: var(--accent); font-size: .76rem; letter-spacing: .09em; text-transform: uppercase; }
-      h2 { margin: 4px 0; font-size: 1.35rem; }
+      article.map { grid-column: 1 / -1; }
+      .card-head { padding: 12px 15px 8px; }
+      h3 { margin: 3px 0; font-size: 1.15rem; }
       .style { margin: 0; color: var(--muted); }
-      .image { display: grid; place-items: center; min-height: 330px; padding: 12px; background-color: #252923; background-image: linear-gradient(45deg,#30352d 25%,transparent 25%),linear-gradient(-45deg,#30352d 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#30352d 75%),linear-gradient(-45deg,transparent 75%,#30352d 75%); background-size: 24px 24px; background-position: 0 0,0 12px,12px -12px,-12px 0; }
-      .image img { display: block; max-width: 100%; max-height: 560px; object-fit: contain; }
-      article:first-child .image img { width: 100%; }
-      .caption { margin: 0; padding: 12px 16px 16px; color: var(--muted); }
-      .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+      .image { display: grid; place-items: center; padding: 10px; background-color: #252923; background-image: linear-gradient(45deg,#30352d 25%,transparent 25%),linear-gradient(-45deg,#30352d 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#30352d 75%),linear-gradient(-45deg,transparent 75%,#30352d 75%); background-size: 24px 24px; background-position: 0 0,0 12px,12px -12px,-12px 0; }
+      .image img { display: block; width: 100%; height: auto; object-fit: contain; }
+      .caption { margin: 0; padding: 10px 15px 14px; color: var(--muted); }
+      nav { margin-top: 28px; }
       a { color: var(--accent); }
       .button { display: inline-block; padding: 9px 13px; border: 1px solid var(--accent); border-radius: 7px; text-decoration: none; }
       footer { padding: 16px 0 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
-      @media (max-width: 600px) { .image { min-height: 240px; } }
+      @media (max-width: 680px) { .cards { grid-template-columns: 1fr; } article.map { grid-column: auto; } .board-head { display: block; } }
     </style>
   </head>
   <body>
     <header>
       <div class="eyebrow">TaleRift · concept art · draft</div>
-      <h1>Style Guide จากผลโหวต</h1>
-      <p class="lede">ตัวอย่าง 3 หมวดจากทิศทางที่ทีมเลือก: ฉาก Cartoon HD, ตัวละคร Cartoon Lite Pixel และมอนสเตอร์ Dream Lite Pixel — แต่ละหมวดยังคง medium ของตัวเอง</p>
-      <div class="notice">ภาพทั้งหมดเป็น concept สำหรับตรวจทิศทางเท่านั้น ยังไม่ใช่ Style samples หรือภาพ production ที่ Art approver อนุมัติ · ภาพ Ref ใช้เขียน guide เท่านั้นและไม่ได้ส่งเข้า image generator</div>
+      <h1>Style Guide Concept Boards</h1>
+      <p class="lede">บอร์ดแนวภาพ 3 ชุด สร้างจาก Style guide ที่ได้จากผลโหวต แต่ละชุดมีฉากแผนที่ 3 แบบ, ตัวละคร 4 ตัว, มอนสเตอร์ 4 ตัว, ไอเทม 4 ชิ้น และองค์ประกอบ UI 4 อย่าง โดยคง medium ของแต่ละหมวดตามผลโหวตเดิม</p>
+      <div class="notice">ทั้งหมดเป็น concept เพื่อเทียบแนวทาง ไม่ใช่ Style samples หรือ production art ที่ผ่านการอนุมัติ · ภาพตัวละคร/มอนบางภาพอาจยังไม่ตรง pixel style เต็มที่ และ UI บางภาพมีองค์ประกอบถูกตัดขอบ</div>
     </header>
     <main>
-      <section class="cards" aria-label="Style guide concept images">
-        <article>
-          <div class="card-head"><div class="category">Map scene</div><h2>Cartoon HD</h2><p class="style">ฉาก isometric · รูปทรงอ่านง่าย · พื้นที่เล่นเปิดโล่ง</p></div>
-          <div class="image"><img src="assets/style-guide-concepts-vote-3/map-cartoon-hd.png" alt="Cartoon HD isometric fantasy plaza concept" /></div>
-          <p class="caption">ลานหินและน้ำพุเป็นจุดนำสายตา พร้อมคงทางหลักให้โล่งสำหรับการเล่นและต่อสู้</p>
-        </article>
-        <article>
-          <div class="card-head"><div class="category">Class roster</div><h2>Cartoon Lite Pixel</h2><p class="style">ตัวละคร native pixel art · cluster คม · silhouette ชัด</p></div>
-          <div class="image"><img src="assets/style-guide-concepts-vote-3/character-cartoon-lite-pixel.png" alt="Cartoon Lite Pixel character concept" /></div>
-          <p class="caption">ตัวอย่างนักผจญภัยหนึ่งตัวในท่ายืน เห็นอาวุธและโล่ครบ; สร้างเป็น pixel clusters ตั้งแต่ต้น ไม่ใช้ฟิลเตอร์ pixelate</p>
-        </article>
-        <article>
-          <div class="card-head"><div class="category">Monster lineup</div><h2>Dream Lite Pixel</h2><p class="style">มอนสเตอร์ native pixel art · รูปทรงแฟนตาซีนุ่ม · แสงเรืองเป็น accent</p></div>
-          <div class="image"><img src="assets/style-guide-concepts-vote-3/monster-dream-lite-pixel.png" alt="Dream Lite Pixel forest wisp monster concept" /></div>
-          <p class="caption">ตัวอย่างมอนสเตอร์ป่าหนึ่งตัว ใช้แสง jade เพียงจุดเดียวเพื่อเน้น core โดยไม่กลบ silhouette</p>
-        </article>
+      <section class="board" id="storybook">
+        <div class="board-head"><div><div class="eyebrow">Board A</div><h2>Storybook Cartoon</h2><p>โทนอุ่น รูปทรงเป็นมิตร และสีสันกลมกลืน โดยยังคงภาษาภาพเฉพาะของแต่ละหมวด</p></div></div>
+        <div class="cards">
+          <article class="map"><div class="card-head"><div class="category">Map scene · 3 maps</div><h3>Cartoon HD</h3><p class="style">ฉาก isometric และพื้นที่เล่นเปิดโล่ง</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/A-storybook-cartoon-maps.png" alt="Board A map scenes: forest ruin, canyon settlement, and rift garden" /></div><p class="caption">แนวคิดฉาก 3 แห่ง: ป่าซากโบราณ, ชุมชนหุบผาหินทราย และสวนรอยแยกผลึก</p></article>
+          <article><div class="card-head"><div class="category">Class roster · 4 characters</div><h3>Cartoon Lite Pixel</h3><p class="style">silhouette และอุปกรณ์ประจำคลาส</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/A-storybook-cartoon-characters.png" alt="Board A four character concepts" /></div><p class="caption">นักดาบ, หน่วยสอดแนม, นักเวท และวิศวกรหน้าไม้</p></article>
+          <article><div class="card-head"><div class="category">Monster lineup · 4 monsters</div><h3>Dream Lite Pixel</h3><p class="style">รูปร่างและขนาดแตกต่างกัน</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/A-storybook-cartoon-monsters.png" alt="Board A four monster concepts" /></div><p class="caption">ด้วงเกราะมอส, วิญญาณเขากวาง, วิสป์ผลึก และผู้พิทักษ์ศิลาผ่า</p></article>
+          <article><div class="card-head"><div class="category">Item icons · 4 items</div><h3>Cartoon HD</h3><p class="style">รูปทรงชัด อ่านได้ในช่องกระเป๋า</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/A-storybook-cartoon-items.png" alt="Board A four item concepts" /></div><p class="caption">ยาฟื้นพลัง, ศักยภาพชาร์ด, เข็มทิศทองเหลือง และชิ้นส่วนเปลือกมอนสเตอร์</p></article>
+          <article><div class="card-head"><div class="category">UI skin · 4 components</div><h3>Dream HD</h3><p class="style">หินสีงาช้าง, teal, jade และขอบ brass</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/A-storybook-cartoon-ui.png" alt="Board A four UI concepts" /></div><p class="caption">ช่องไอเทม, ปุ่ม, กรอบหลอดสถานะ และกรอบหน้าต่าง</p></article>
+        </div>
       </section>
-      <nav class="actions" aria-label="Related artboards">
-        <a class="button" href="boards-v2.html">เปิดบอร์ดเดิม 1–24</a>
-      </nav>
+      <section class="board" id="riftbound">
+        <div class="board-head"><div><div class="eyebrow">Board B</div><h2>Riftbound Pixel</h2><p>เน้น silhouette และกลุ่มสีใหญ่เพื่อช่วยให้ pixel-lite อยู่ร่วมกับฉากและไอคอน HD ได้</p></div></div>
+        <div class="cards">
+          <article class="map"><div class="card-head"><div class="category">Map scene · 3 maps</div><h3>Cartoon HD</h3><p class="style">ฉาก isometric และพื้นที่เล่นเปิดโล่ง</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/B-riftbound-pixel-maps.png" alt="Board B map scenes" /></div><p class="caption">แนวคิดฉาก 3 แห่ง: ป่าซากโบราณ, ชุมชนหุบผาหินทราย และสวนรอยแยกผลึก</p></article>
+          <article><div class="card-head"><div class="category">Class roster · 4 characters</div><h3>Cartoon Lite Pixel</h3><p class="style">silhouette และอุปกรณ์ประจำคลาส</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/B-riftbound-pixel-characters.png" alt="Board B four character concepts" /></div><p class="caption">นักดาบ, หน่วยสอดแนม, นักเวท และวิศวกรหน้าไม้</p></article>
+          <article><div class="card-head"><div class="category">Monster lineup · 4 monsters</div><h3>Dream Lite Pixel</h3><p class="style">รูปร่างและขนาดแตกต่างกัน</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/B-riftbound-pixel-monsters.png" alt="Board B four monster concepts" /></div><p class="caption">ด้วงเกราะมอส, วิญญาณเขากวาง, วิสป์ผลึก และผู้พิทักษ์ศิลาผ่า</p></article>
+          <article><div class="card-head"><div class="category">Item icons · 4 items</div><h3>Cartoon HD</h3><p class="style">รูปทรงชัด อ่านได้ในช่องกระเป๋า</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/B-riftbound-pixel-items.png" alt="Board B four item concepts" /></div><p class="caption">ยาฟื้นพลัง, ศักยภาพชาร์ด, เข็มทิศทองเหลือง และชิ้นส่วนเปลือกมอนสเตอร์</p></article>
+          <article><div class="card-head"><div class="category">UI skin · 4 components</div><h3>Dream HD</h3><p class="style">หินสีงาช้าง, teal, jade และขอบ brass</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/B-riftbound-pixel-ui.png" alt="Board B four UI concepts" /></div><p class="caption">ช่องไอเทม, ปุ่ม, กรอบหลอดสถานะ และกรอบหน้าต่าง</p></article>
+        </div>
+      </section>
+      <section class="board" id="dreamrift">
+        <div class="board-head"><div><div class="eyebrow">Board C</div><h2>Dreamrift Cinematic</h2><p>บรรยากาศรอยแยกและแสงเรืองแบบจำกัด โดยรักษาความต่างสีของเส้นทาง, silhouette และส่วนควบคุม UI</p></div></div>
+        <div class="cards">
+          <article class="map"><div class="card-head"><div class="category">Map scene · 3 maps</div><h3>Cartoon HD</h3><p class="style">ฉาก isometric และพื้นที่เล่นเปิดโล่ง</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/C-dreamrift-cinematic-maps.png" alt="Board C map scenes" /></div><p class="caption">แนวคิดฉาก 3 แห่ง: ป่าซากโบราณ, ชุมชนหุบผาหินทราย และสวนรอยแยกผลึก</p></article>
+          <article><div class="card-head"><div class="category">Class roster · 4 characters</div><h3>Cartoon Lite Pixel</h3><p class="style">silhouette และอุปกรณ์ประจำคลาส</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/C-dreamrift-cinematic-characters.png" alt="Board C four character concepts" /></div><p class="caption">นักดาบ, หน่วยสอดแนม, นักเวท และวิศวกรหน้าไม้</p></article>
+          <article><div class="card-head"><div class="category">Monster lineup · 4 monsters</div><h3>Dream Lite Pixel</h3><p class="style">รูปร่างและขนาดแตกต่างกัน</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/C-dreamrift-cinematic-monsters.png" alt="Board C four monster concepts" /></div><p class="caption">ด้วงเกราะมอส, วิญญาณเขากวาง, วิสป์ผลึก และผู้พิทักษ์ศิลาผ่า</p></article>
+          <article><div class="card-head"><div class="category">Item icons · 4 items</div><h3>Cartoon HD</h3><p class="style">รูปทรงชัด อ่านได้ในช่องกระเป๋า</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/C-dreamrift-cinematic-items.png" alt="Board C four item concepts" /></div><p class="caption">ยาฟื้นพลัง, ศักยภาพชาร์ด, เข็มทิศทองเหลือง และชิ้นส่วนเปลือกมอนสเตอร์</p></article>
+          <article><div class="card-head"><div class="category">UI skin · 4 components</div><h3>Dream HD</h3><p class="style">หินสีงาช้าง, teal, jade และขอบ brass</p></div><div class="image"><img src="assets/style-guide-boards-vote-3/C-dreamrift-cinematic-ui.png" alt="Board C four UI concepts" /></div><p class="caption">ช่องไอเทม, ปุ่ม, กรอบหลอดสถานะ และกรอบหน้าต่าง</p></article>
+        </div>
+      </section>
+      <nav aria-label="Related artboards"><a class="button" href="boards-v2.html">เปิดบอร์ดเดิม 1–24</a></nav>
     </main>
-    <footer>ภาพ concept สร้างจาก draft Style guide ในโปรเจกต์ TaleRift · ไอคอน Cartoon HD และ UI Dream HD ยังไม่ได้อยู่ในตัวอย่าง 3 ภาพชุดนี้</footer>
+    <footer>Concept art สร้างจาก draft Style guide ของ TaleRift · ยังไม่ใช่ Style samples หรือภาพ production ที่ Art approver อนุมัติ · บอร์ดเดิมยังเก็บไว้ที่หน้า 1–24</footer>
   </body>
 </html>
